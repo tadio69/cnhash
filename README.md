@@ -1,7 +1,13 @@
 # cnhash
 
 **cnhash** est un projet Java modulaire utilisant **Spring Boot** et **Maven**.  
-Le projet est structuré en modules Maven :
+Le projet permet de **créer le hash d'une entrée (reconvertie en UTF-8)** et de tester ses propriétés:
+
+- **Irréversibilité** : impossible de retrouver l’entrée d’origine à partir du hash
+- **Résistance aux collisions** : deux entrées différentes ne produisent pas le même hash
+- **Robustesse** : tolérance aux petites variations de l’entrée
+- **Déterminisme** : la même entrée produit toujours le même hash
+Le projet est structuré en modules Maven:
 
 - `cnhash-core` : contient la logique métier et les classes utilitaires.
 - `cnhash-api` : contient l’API REST, basée sur Spring Boot, exposant les fonctionnalités du core.
@@ -52,7 +58,7 @@ mvn spring-boot:run
 Ou en exécutant directement le JAR:
 java -jar target/api-0.0.1-SNAPSHOT.jar
 
-Le serveur sera disponible par défaut sur http://localhost:8080.
+Le serveur sera disponible par défaut sur http://localhost:8081.
 
 ## Tests
 
